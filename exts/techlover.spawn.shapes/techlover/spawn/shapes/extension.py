@@ -21,17 +21,16 @@ class MyExtension(omni.ext.IExt):
         with self._window.frame:
             with ui.VStack():
 
-                def on_click():
+                def on_click(form):
                     omni.kit.commands.execute('CreateMeshPrimWithDefaultXform',
-	                    prim_type='Cube',
+	                    prim_type=form,
 	                    above_ground=True)
                     print("clicked")
 
-                ui.Button("Create Cube", clicked_fn=on_click)
+                ui.Button("Spawn Cube", clicked_fn=lambda: on_click("Cube"))
+                ui.Button("Spawn Cone", clicked_fn=lambda: on_click("Cone"))
 
     def on_shutdown(self):
         print("[techlover.spawn.shapes] MyExtension shutdown")
-
-
 
 
