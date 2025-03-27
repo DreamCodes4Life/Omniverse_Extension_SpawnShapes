@@ -1,0 +1,20 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Python: Attach",
+			"type": "python",
+			"request": "attach",
+			"localRoot": "${workspaceFolder}",
+            "remoteRoot": "${workspaceFolder}",
+			"port": 3000,
+            "host": "127.0.0.1",
+            "subProcess": true,
+            "runtimeArgs": [
+                "--preserve-symlinks",
+                "--preserve-symlinks-main"
+            ]
+
+		}
+    ]
+}
